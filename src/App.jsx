@@ -18,7 +18,8 @@ class App extends React.Component {
 
   onSubmit(click) {
     click.preventDefault();
-
+    console.log("hello");
+    console.log(this.state.text);
     let newList = [...this.state.list, this.state.text];
     this.setState({ list: newList, text: "" });
   }
