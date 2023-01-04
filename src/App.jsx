@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Hello World!</h1>
-        <form>
+        <form onSubmit={this.onSubmit}>
           <input
             type="text"
             name="text"
