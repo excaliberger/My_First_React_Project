@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import FilmsList from "./Components/FilmsList.jsx";
 
 class App extends React.Component {
 
@@ -44,6 +45,7 @@ class App extends React.Component {
             return <li key={item + idx}>{item}</li>;
           })}
         </ul>
+        <FilmsList />
       </div>
     );
   }
