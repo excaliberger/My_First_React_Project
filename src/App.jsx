@@ -3,52 +3,42 @@ import './App.css';
 import React from 'react';
 import FilmsList from "./Components/FilmsList.jsx";
 
-class App extends React.Component {
 
-  constructor (props) {
-    super (props);
-    
-    this.state = {
-      list: ["ready","set","GO"],
-      text: "",
-    };
+function App(props) {
 
-    this.onSubmit = this.onSubmit.bind(this)
-  
-  }
+  let [list, setList] = React.useState(["ready","set","GO!"])
+  let [text, setText] = React.useState([""])
 
-  onSubmit(click) {
-    click.preventDefault();
+  function onSubmit(event) {
+    event.preventDefault();
     console.log("hello");
-    console.log(this.state.text);
-    let newList = [...this.state.list, this.state.text];
+    console.log(text);
+    let newList = [...list, text];
     this.setState({ list: newList, text: "" });
   }
 
 
-  render() {
-    return (
-      <div>
-        <h1>Hello World!</h1>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            name="text"
-            id="text"
-            value={this.state.text}
-            onChange={(event) => this.setState({text: event.target.value})}>
-          </input>
-          <button type="submit">Add</button>
-        </form>
-        <ul>
-          { this.state.list.map((item, idx) => {
-            return <li key={item + idx}>{item}</li>;
-          })}
-        </ul>
-        <FilmsList />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <form onSubmit={onSubmit()}>
+        <input
+          type="text"
+          name="text"
+          id="text"
+          value={text}
+          onChange={(event) => setText(event.target.value)}>
+        </input>
+        <button type="submit">Add</button>
+      </form>
+      <ul>
+        { list.map((item, idx) => {
+          return <li key={item + idx}>{item}</li>;
+        })}
+      </ul>
+      <FilmsList />
+    </div>
+  );
 
 }
 
