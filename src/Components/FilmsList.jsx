@@ -30,7 +30,7 @@ function FilmsList() {
 
     return (
         <ul>
-            {this.renderList()}
+            {renderList()}
         </ul>
     );
 }

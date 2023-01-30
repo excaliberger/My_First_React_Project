@@ -21,7 +21,7 @@ function App(props) {
   return (
     <div>
       <h1>Hello World!</h1>
-      <form onSubmit={onSubmit()}>
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           name="text"
