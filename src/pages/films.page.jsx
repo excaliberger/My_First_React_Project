@@ -4,11 +4,11 @@ import { filterFilmsByDirector, getListOf } from '../helpers/film.helpers';
 
 function FilmsPage() {
     
-    let filmsByDirector = filterFilmsByDirector(list, searchDirector);
-    let directors = getListOf(list, "director")
-    
     let [list, setList] = React.useState([]);
     let [searchDirector, setSearchDirector] = React.useState("");
+
+    let filmsByDirector = filterFilmsByDirector(list, searchDirector);
+    let directors = getListOf(list, "director")
 
     React.useEffect(() => {
         getFilms()
@@ -37,7 +37,7 @@ function FilmsPage() {
     }
 
     function renderList() {
-        return filterFilmsByDirector().map((film) => {
+        return filmsByDirector.map((film) => {
             return (<li key={film.id}>{film.title}</li>)
         })
     }; 
