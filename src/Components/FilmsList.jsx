@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react';
 
 function FilmsList() {
     
 
-    let [list, setList] = React.useState([]);
+    let [list, setList] = useState([]);
 
-    React.useEffect(() => {
+    useEffect(() => {
         getFilms()
     },[]);
     
@@ -30,7 +30,7 @@ function FilmsList() {
 
     return (
         <ul>
-            {renderList()}
+            {renderList(list)}
         </ul>
     );
 }

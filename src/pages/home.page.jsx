@@ -12,7 +12,7 @@ function HomePage(props) {
     console.log("hello");
     console.log(text);
     let newList = [...list, text];
-    this.setState({ list: newList, text: "" });
+    setList(newList);
   }
 
 
