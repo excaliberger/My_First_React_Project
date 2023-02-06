@@ -1,11 +1,11 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import FilmsList from "./films.page";
 
 
 function HomePage(props) {
 
-  let [list, setList] = React.useState(["ready","set","GO!"])
-  let [text, setText] = React.useState([""])
+  let [list, setList] = useState(["ready","set","GO!"])
+  let [text, setText] = useState([""])
 
   function onSubmit(event) {
     event.preventDefault();
