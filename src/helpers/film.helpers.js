@@ -26,7 +26,7 @@ export function getFilmStats(list) {
    {
         acc_score: 0,
         avg_score: 0,
-        total: list.length,
+        total: 0,
         latest: null 
    });
 }

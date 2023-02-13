@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import FilmsList from "./films.page";
 
 
 function HomePage(props) {
@@ -29,12 +28,6 @@ function HomePage(props) {
         </input>
         <button type="submit">Add</button>
       </form>
-      <ul>
-        { list.map((item, idx) => {
-          return <li key={item + idx}>{item}</li>;
-        })}
-      </ul>
-      <FilmsList />
     </div>
   );
 

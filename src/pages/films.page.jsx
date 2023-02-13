@@ -1,18 +1,19 @@
-import React, { Component } from 'react';
+import { useState, useEffect } from 'react';
 import { filterFilmsByDirector, getListOf, getFilmStats } from '../helpers/film.helpers';
 import { Link } from 'react-router-dom';
 
 
+
 function FilmsPage() {
     
-    let [list, setList] = React.useState([]);
-    let [searchDirector, setSearchDirector] = React.useState("");
+    let [list, setList] = useState([]);
+    let [searchDirector, setSearchDirector] = useState("");
 
     let filmsByDirector = filterFilmsByDirector(list, searchDirector);
     let directors = getListOf(list, "director");
     let { avg_score, latest, total } = getFilmStats(filmsByDirector)
 
-    React.useEffect(() => {
+    useEffect(() => {
         getFilms()
     },[]);
     
